@@ -12,7 +12,7 @@
         </div>
         <div class="rank d-flex w-75 justify-content-between">
             @for($i = 0; $i <= 2; $i++)
-                <div class="box w-25 p-4" style="height: 200px;border-radius: 10px;border: 1px solid red">
+                <div class="box w-25 p-4" style="height: 200px;border-radius: 10px;border: 1px solid red" onclick="location.href='{{route('view',$data['garden'][$i]['id'])}}'">
                     <h3>{{$i+1}}</h3>
                     <p class="m-0">{{$data['garden'][$i]['name']}}</p>
                     <p class="m-0">{{$data['garden'][$i]['phone']}}</p>
@@ -22,7 +22,7 @@
         </div>
 
     @for($i = 3; $i < $data['garden']->count();$i++)
-            <div class="box w-25" style="height: 100px;">
+            <div class="box w-25" style="height: 100px;" onclick="location.href='{{route('view',$data['garden'][$i]['id'])}}'">
                 <p class="m-0">{{$data['garden'][$i]['name']}}</p>
                 <p class="m-0">{{$data['garden'][$i]['phone']}}</p>
                 <p class="m-0">{{$data['garden'][$i]['address']}}</p>

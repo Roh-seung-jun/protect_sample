@@ -16,4 +16,8 @@ class User extends Authenticatable
     public function garden(){
         return $this->hasOne('App\garden');
     }
+
+    public function promises(){
+        return $this->hasMany('App\Promise');
+    }
 }

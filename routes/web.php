@@ -42,10 +42,18 @@ Route::get('/sign','UserController@signPage')->name('sign');
 Route::post('/sign','UserController@sign')->name('sign');
 
 Route::get('/login','UserController@loginPage')->name('login');
+Route::get('/notice','GardenController@noticePage')->name('notice');
+Route::get('/notice/{id}','GardenController@noticeTagPage')->name('noticePage');
+Route::get('/view/{id}','GardenController@viewPage')->name('view');
 Route::post('/login','UserController@login')->name('login');
+Route::post('/getData','PromiseController@getData')->name('getData');
+Route::post('/createPromise','PromiseController@createPromise')->name('createPromise');
+Route::post('/createReview','ReviewController@createReview')->name('createReview');
 
 Route::get('/logout','UserController@logout')->name('logout');
+Route::get('/cancel/{id}','GardenController@cancel')->name('cancel');
 Route::get('/guide','GardenController@guide')->name('guide');
-Route::get('/promise','GardenController@promise')->name('promise');
+Route::get('/impossible/{id}','PromiseController@impossible')->name('impossible');
+Route::get('/promise/{id}','GardenController@promise')->name('promise');
 Route::get('/history','GardenController@history')->name('history');
 

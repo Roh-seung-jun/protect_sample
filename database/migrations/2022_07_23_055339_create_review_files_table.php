@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewsTable extends Migration
+class CreateReviewFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('review_files', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('promise_id');
-            $table->string('contents');
-            $table->integer('score');
+            $table->string('review_id');
+            $table->string('file_name');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('review_files');
     }
 }

@@ -12,4 +12,7 @@ class Garden extends Model
     public function promise(){
         return $this->hasMany('App\Promise');
     }
+    public function impossible(){
+        return $this->hasMany('App\Impossible');
+    }
 }
